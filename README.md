@@ -1,3 +1,48 @@
+# Notizen Alio für schnellen Einstieg in Projekt:
+
+Requirements:
+
+MySql, vue, node, npm
+java version 11-18
+
+Ich empfehle intellij idea als IDE aber prinzipiell jede möglich
+
+npm install
+
+starten:
+
+./mvnw -> front und backend auf port localhost:8080
+
+- ohne hot reload
+
+zusätzlich npm start
+für frontend auf port 9000
+
+- mit hot reload für frontend änderungen
+
+Wichtige Ordner
+
+Frontend:
+src/main/webapp --> Frontend vue,typescript files
+src/main/webapp/app/entities --> Die Seiten für die generierten Entities Auflistung, update und co
+
+Backend:
+src/main/java --> Backend
+
+- src/main/java/web/rest --> Http Request Endpunkte
+- src/main/java/domain --> Datenmodelle
+- src/main/java/repository --> Als Datenbankschnittstelle
+
+# Datenmodell überleungen:
+
+1. Eintrag
+   double betrag // nicht mathemtischer Betrag kann auch negativ sein
+   String userID // für zuordnung zum entsprechenden Nutzer
+   Category category // Zugeorndete Kategorie
+
+2. Category
+   String name
+
 # FinancenTracker
 
 This application was generated using JHipster 7.9.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.3](https://www.jhipster.tech/documentation-archive/v7.9.3).
