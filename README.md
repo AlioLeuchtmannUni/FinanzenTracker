@@ -35,13 +35,49 @@ src/main/java --> Backend
 
 # Datenmodell überleungen:
 
-1. Eintrag
-   double betrag // nicht mathemtischer Betrag kann auch negativ sein
-   String userID // für zuordnung zum entsprechenden Nutzer
-   Category category // Zugeorndete Kategorie
+https://www.jhipster.tech/jdl-studio/
+hier rein kopieren für Bildliche darstellung
 
-2. Category
-   String name
+entity Eintrag {
+betrag Double required,
+userID String required,
+notes String,
+bookingTime ZonedDateTime required,
+photo ImageBlob, // Bild wenn gewollt, rechnung etc
+// Categrory
+}
+
+relationship ManyToOne{
+Eintrag{category(name)} to Category // wird vom nutzer ausgeweahlt
+}
+
+entity Category {
+name String required,
+userID String required,
+notes String,
+}
+
+// wiederkehrende Buchung
+entity ScheduledTask {
+// Eintrag der Gebucht werden soll, daraus kann der user gezogen werden
+notes String,
+userID String required,
+// Intervall
+intervall String required, // Format noch offen
+// Beispiel Weekly,Mo,Di,Mi für jeden dieser tage
+// Monthly,01 immer am ersten jeden Monat
+// und so weiter und so fort
+// gültigkeits Zeitraum, wenn nicht belegt immer gültig
+begin ZonedDateTime,
+end ZonedDateTime,
+}
+
+relationship OneToOne{
+ScheduledTask{eintrag} to Eintrag // wird vom nutzer ausgeweahlt
+}
+
+// Mann könnte auch noch Konten einführen, aber ich denke so reicht es
+// Nutzer kann sich auch 2 Accounts erstellen
 
 # FinancenTracker
 
