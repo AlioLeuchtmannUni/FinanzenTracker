@@ -9,7 +9,7 @@ eg $input-color: red;
 @import '~bootswatch/dist/morph/variables';
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
-@import '~bootswatch/dist/morph/bootswatch';
+//@import '~bootswatch/dist/morph/bootswatch'; kaputt
 /* Dirty fix on navbar active link with bootswatch theme */
 nav li.router-link-active .navbar-dropdown-menu {
   color: $navbar-dark-active-color;

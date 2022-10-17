@@ -2,10 +2,13 @@
 
 Requirements:
 
-MySql, vue, node, npm
+MySql, vue, node, npm,docker
 java version 11-18
 
 Ich empfehle intellij idea als IDE aber prinzipiell jede möglich
+
+docker starten
+docker-compose -f src/main/docker/elasticsearch.yml up -d
 
 npm install
 
